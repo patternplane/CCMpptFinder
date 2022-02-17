@@ -10,7 +10,10 @@ namespace CCMpptFinder
     {
         static private int[] patternTable = new int[512];
 
-        static private int MakeTable(string sample)
+        // 같으면 true, 다르면 false일 것
+        public delegate bool StringCompare(char a, char b);
+
+        static private int MakeTable(string sample, StringCompare compareFunc)
         {
             if (sample.Length > 512)
                 return -1;
@@ -22,7 +25,7 @@ namespace CCMpptFinder
 
             while (setter < len)
             {
-                if (sample[setter] == sample[checker])
+                if (compareFunc(sample[setter] , sample[checker]))
                     patternTable[setter++] = ++checker;
                 else
                 {
@@ -39,9 +42,9 @@ namespace CCMpptFinder
         /**     origin에서 sample을 하나라도 발견하면 바로 종료
         *       발견시 1, 찾을 수 없을시 0, 오류시 -1을 반환
         */
-        static public int FindPattern_simple(string origin, string sample)
+        static public int FindPattern_simple(string origin, string sample, StringCompare compareFunc)
         {
-            if (MakeTable(sample) == -1)
+            if (MakeTable(sample, compareFunc) == -1)
                 return -1;
 
             int o_len = origin.Length;
@@ -51,7 +54,7 @@ namespace CCMpptFinder
 
             while (o_i < o_len)
             {
-                if (origin[o_i] == sample[s_i])
+                if (compareFunc(origin[o_i] , sample[s_i]))
                 {
                     o_i++;
                     s_i++;
