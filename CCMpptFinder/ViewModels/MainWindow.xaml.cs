@@ -22,6 +22,8 @@ namespace CCMpptFinder
     {
         public MainWindow()
         {
+            Search.test();
+
             InitializeComponent();
         }
     }
