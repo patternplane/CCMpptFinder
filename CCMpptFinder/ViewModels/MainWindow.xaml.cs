@@ -23,6 +23,9 @@ namespace CCMpptFinder
         public MainWindow()
         {
             Search.test();
+            Powerpoint pptClass = new Powerpoint();
+            pptClass.test();
+
 
             InitializeComponent();
         }
