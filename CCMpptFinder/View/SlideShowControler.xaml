@@ -1,0 +1,44 @@
+﻿<Window x:Class="CCMpptFinder.SlideShowControler"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CCMpptFinder"
+        mc:Ignorable="d"
+        Title="SlideShowControler" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <GridSplitter
+                Grid.Row="0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Bottom"
+                Background="Black" 
+                ShowsPreview="true" 
+                ResizeDirection="Rows"
+                Height="5"
+                />
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <GridSplitter 
+            Grid.Column="0"
+            VerticalAlignment="Stretch" 
+            HorizontalAlignment="Right"
+            Background="Black" 
+            ShowsPreview="true" 
+            Width="5"/>
+
+        </Grid>
+
+
+
+
+    </Grid>
+</Window>
