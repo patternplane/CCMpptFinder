@@ -62,11 +62,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Models\Powerpoint.cs" />
-    <Compile Include="Models\Search.cs" />
-    <Compile Include="Models\StringKMP.cs" />
-    <Compile Include="ViewModels\MainWindow.xaml.cs" />
-    <Page Include="MainWindow.xaml">
+    <Compile Include="Model\Powerpoint.cs" />
+    <Compile Include="Model\Search.cs" />
+    <Compile Include="Model\StringKMP.cs" />
+    <Compile Include="ViewModel\MainWindow.xaml.cs" />
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -101,5 +101,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
