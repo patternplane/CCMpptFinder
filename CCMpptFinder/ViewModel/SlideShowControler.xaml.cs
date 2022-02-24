@@ -22,6 +22,18 @@ namespace CCMpptFinder
         public SlideShowControler()
         {
             InitializeComponent();
+
+
+            TestList.Items.Add(new slideObject() { number = "number", source = "C:\\Users\\Sun\\Desktop\\프레젠테이션1\\슬라이드1.jpg" }) ;
+            TestList.Items.Add(new slideObject() { number = "Apricot2", source = "C:\\Users\\Sun\\Desktop\\프레젠테이션1\\제목 없음.png" });
+            TestList.Items.Add(new slideObject() { number = "Apricot3", source = "C:\\Users\\Sun\\Desktop\\프레젠테이션1\\제목 없음.png" });
+            TestList.Items.Add(new slideObject() { number = "Apricot4", source = "C:\\Users\\Sun\\Desktop\\프레젠테이션1\\슬라이드1.jpg" });
         }
+    }
+
+    class slideObject
+    {
+        public String number { set; get; }
+        public String source { set; get; }
     }
 }
