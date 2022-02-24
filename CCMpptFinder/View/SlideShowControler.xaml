@@ -10,10 +10,9 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*" MinHeight="300"/>
+            <RowDefinition Height="1*" MinHeight="200" MaxHeight="400"/>
         </Grid.RowDefinitions>
-
         <GridSplitter
                 Grid.Row="0"
                 HorizontalAlignment="Stretch"
@@ -26,6 +25,7 @@
             BorderThickness="2"
                 />
 
+
         <ListView 
             Grid.Row="1"
             HorizontalAlignment="Stretch"
@@ -34,38 +34,45 @@
             Width="Auto"
             ScrollViewer.VerticalScrollBarVisibility="Disabled"
             ScrollViewer.HorizontalScrollBarVisibility="Visible"
+            PreviewMouseWheel="ScrollViewer_PreviewMouseWheel"
+            
+
             ItemsSource="{Binding }">
+
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Horizontal" />
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Margin" Value="10,10,10,10"></Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
 
             <ListView.ItemTemplate >
-                    <DataTemplate >
-                        <Grid VerticalAlignment="Stretch" >
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding Path=number}" Foreground="Teal" FontSize="14"
+                <DataTemplate >
+                    <Grid VerticalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Path=number}" Foreground="Teal" FontSize="14"
                                      VerticalAlignment="Top"/>
-                            <Image Source="{Binding Path=source}"
-                                     Grid.Column="1" Stretch="Uniform" Margin="10,10,10,10"/>
+                        <Image Source="{Binding Path=source}"
+                                     Grid.Column="1" Stretch="Uniform" Margin="10,0"/>
 
 
-                        </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
 
-            
-            
-            </ListView>
-
-            <Grid >
+        </ListView>
+        
+        <Grid >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*" MinWidth="500"/>
+                <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
             <GridSplitter 
             Grid.Column="0"
@@ -74,7 +81,26 @@
             Background="Black" 
             ShowsPreview="true" 
             Width="5"/>
-            
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="16*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="16*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                
+            <Image 
+                x:Name="previewImageFrame"
+                Grid.Row="1"
+                Grid.Column="1"
+                Source="{Binding Path=previewImage}"
+                Stretch="Uniform"> </Image>
+            </Grid>
+
         </Grid>
 
 
