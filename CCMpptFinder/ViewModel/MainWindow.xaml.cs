@@ -29,8 +29,10 @@ namespace CCMpptFinder
 
             InitializeComponent();
 
-            SlideShowControler showview = new SlideShowControler();
-            showview.Show();
+            //SlideShowControler showview = new SlideShowControler();
+            //showview.Show();
+            //SlideShowControler showview2 = new SlideShowControler();
+            //showview2.Show();
         }
     }
 }
