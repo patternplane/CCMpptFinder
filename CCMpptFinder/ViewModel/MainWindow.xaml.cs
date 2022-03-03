@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace CCMpptFinder
 {
     /// <summary>
@@ -20,12 +21,13 @@ namespace CCMpptFinder
     /// </summary>
     public partial class MainWindow : Window
     {
+        String[] PptFiles;
+
         public MainWindow()
         {
             //Search.test();
             //Powerpoint pptClass = new Powerpoint();
             //pptClass.test();
-
 
             InitializeComponent();
 
