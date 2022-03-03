@@ -7,19 +7,97 @@
         mc:Ignorable="d"
         Title="PPT Viewer" Height="570.965" Width="962.673">
     <Grid>
-        <!--폴더 지정 및 검색을 통해 ppt목록을 불러오기-->
-        <ComboBox
-            Text="폴더"
-            IsEditable="true"
-            IsReadOnly="true"
-            Margin="38,38,601,462" />
-        <TextBox Margin="38,90,601,419"></TextBox>
-        <ListBox Margin="38,134,601,56"></ListBox>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
 
-        <!--불러올 ppt를 미리 예약하기-->
-        <ListBox Margin="392,38,255,56"></ListBox>
-        
-        <!--슬라이드쇼 시작 버튼-->
-        <Button Margin="794,347,57,56"></Button>
+        <Grid Grid.Column="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="47*"/>
+                <RowDefinition Height="36*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="36*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="341*"/>
+                <RowDefinition Height="47*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="13*"/>
+                <ColumnDefinition Width="129*"/>
+                <ColumnDefinition Width="17*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--폴더 지정 및 검색을 통해 ppt목록을 불러오기-->
+            <ComboBox
+                Grid.Column="1"
+                Text="폴더 선택"
+                IsEditable="true"
+                IsReadOnly="true"  Grid.Row="1"/>
+            <TextBox
+                Grid.Row="3" Grid.Column="1"/>
+            <ListBox 
+                Grid.Row="5" Grid.Column="1" />
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="92*"/>
+                <RowDefinition Height="337*"/>
+                <RowDefinition Height="18*"/>
+                <RowDefinition Height="44*"/>
+                <RowDefinition Height="49*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="34*"/>
+                <ColumnDefinition Width="255*"/>
+                <ColumnDefinition Width="30*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--불러올 ppt를 미리 예약하기-->
+            <ListBox
+             Grid.Row="1" Grid.Column="1"/>
+            <Grid Grid.Row="3" Grid.Column="1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="106*"/>
+                    <ColumnDefinition Width="38*"/>
+                    <ColumnDefinition Width="105*"/>
+                </Grid.ColumnDefinitions>
+                <Button 
+             Grid.Column="0" 
+             >
+                </Button>
+                <Button 
+            Grid.Column="2" 
+             />
+
+            </Grid>
+        </Grid>
+
+
+
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="128*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="17*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="48*"/>
+                <ColumnDefinition Width="217*"/>
+                <ColumnDefinition Width="53*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--슬라이드쇼 시작 버튼-->
+            <Button 
+            Grid.Row="1"
+                Grid.Column="1"
+             >
+
+            </Button>
+        </Grid>
     </Grid>
 </Window>
+
+    
