@@ -18,7 +18,7 @@ namespace CCMpptFinder
                 String[] files = Directory.GetFiles(path,"*.ppt?");
                 return files;
             }
-            catch (Exception e)
+            catch 
             {
                 return null;
             }
