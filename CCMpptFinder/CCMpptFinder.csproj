@@ -63,9 +63,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\File.cs" />
+    <Compile Include="Model\FileManager.cs" />
     <Compile Include="Model\Option.cs" />
     <Compile Include="Model\Powerpoint.cs" />
+    <Compile Include="Model\PptData.cs" />
     <Compile Include="Model\Search.cs" />
     <Compile Include="Model\StringKMP.cs" />
     <Compile Include="ViewModel\MainWindow.xaml.cs" />
