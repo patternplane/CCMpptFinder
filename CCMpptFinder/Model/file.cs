@@ -9,7 +9,7 @@ using System.IO;
 
 namespace CCMpptFinder
 {
-    class file
+    class File
     {
         static public String[] getPptFiles(String path) 
         {
