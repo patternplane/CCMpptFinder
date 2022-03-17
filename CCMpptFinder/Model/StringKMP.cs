@@ -8,14 +8,26 @@ namespace CCMpptFinder
 {
     class StringKMP
     {
-        // 전처리 테이블
+        /// <summary>
+        /// 전처리 테이블
+        /// </summary>
         static private int[] patternTable = new int[512];
 
-        // 문자열 비교함수의 명세
-        // 같으면 true, 다르면 false일 것
+        /// <summary>
+        /// 문자 비교함수의 명세
+        /// 같으면 true, 다르면 false일 것
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
         public delegate bool StringCompare(char a, char b);
 
-        // KMP - 전처리 테이블 제작 함수
+        /// <summary>
+        /// KMP - 전처리 테이블 제작 함수
+        /// </summary>
+        /// <param name="sample"></param>
+        /// <param name="compareFunc"></param>
+        /// <returns></returns>
         static private int MakeTable(string sample, StringCompare compareFunc)
         {
             if (sample.Length > 512)
@@ -42,10 +54,24 @@ namespace CCMpptFinder
             return 0;
         }
 
-        // KMP 검색
-        /**     origin에서 sample을 하나라도 발견하면 바로 종료
-        *       발견시 1, 찾을 수 없을시 0, 오류시 -1을 반환
-        */
+
+
+        /// <summary>
+        /// KMP 검색
+        /// (origin에서 sample을 하나라도 발견하면 바로 종료)
+        /// </summary>
+        /// <param name="origin">
+        /// 원본 문자열
+        /// </param>
+        /// <param name="sample">
+        /// 찾을 문자열
+        /// </param>
+        /// <param name="compareFunc">
+        /// 비교함수
+        /// </param>
+        /// <returns>
+        /// 발견시 1, 찾을 수 없을시 0, 오류시 -1을 반환
+        /// </returns>
         static public int FindPattern_simple(string origin, string sample, StringCompare compareFunc)
         {
             if (MakeTable(sample, compareFunc) == -1)
@@ -82,5 +108,6 @@ namespace CCMpptFinder
             }
             return 0;
         }
+        
     }
 }

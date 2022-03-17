@@ -31,10 +31,14 @@ namespace CCMpptFinder
             TestList.Items.Add(new slideObject() { number = "Apricot4", source = "C:\\Users\\Sun\\Desktop\\프레젠테이션1\\슬라이드1.jpg" });
         }
 
-        // 스크롤바 마우스 휠 동작
-        // 출처:
-        // https://onlab94.tistory.com/116 [ㅇㅅㅎ]
-        // https://stackoverflow.com/questions/43053345/wpf-accessing-scrollviewer-of-a-listview-codebehind
+        /// <summary>
+        /// 스크롤바 마우스 휠 동작<br/>
+        /// 출처:<br/>
+        /// https://onlab94.tistory.com/116 [ㅇㅅㅎ]<br/>
+        /// https://stackoverflow.com/questions/43053345/wpf-accessing-scrollviewer-of-a-listview-codebehind
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             Decorator border = VisualTreeHelper.GetChild((ListView)sender, 0) as Decorator;

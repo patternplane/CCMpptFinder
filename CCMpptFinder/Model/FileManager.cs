@@ -10,7 +10,16 @@ namespace CCMpptFinder
 {
     class FileManager
     {
-        // 특정 디렉토리의 ppt 프레젠테이션 파일 목록을 생성합니다.
+        // 
+        /// <summary>
+        /// 특정 디렉토리의 ppt 프레젠테이션 파일 목록을 생성합니다.
+        /// </summary>
+        /// <param name="path">
+        /// 파일 목록을 살펴볼 디렉토리
+        /// </param>
+        /// <returns>
+        /// ppt 프레젠테이션 파일 이름 String 배열
+        /// </returns>
         static public String[] getPptFiles(String path) 
         {
             try
@@ -25,6 +34,12 @@ namespace CCMpptFinder
 
         }
 
+        /// <summary>
+        /// 프로그램이 실행되는 현재 위치를 가져옵니다.
+        /// </summary>
+        /// <returns>
+        /// 프로그램의 현재 위치
+        /// </returns>
         static public String getCurrentDir()
         {
             return Directory.GetCurrentDirectory();
